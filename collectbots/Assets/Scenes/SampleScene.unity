@@ -400,7 +400,7 @@ MonoBehaviour:
   outputText: {fileID: 324266835}
   terrenoPrefab: {fileID: 3811983264912822627, guid: 1e7f3541d263dc7438b137f0ee51d1cc, type: 3}
   papeleraPrefab: {fileID: 7235991722038223375, guid: 4a17e489d7fa94c4391df059a94485de, type: 3}
-  robotPrefab: {fileID: 5049586609095629037, guid: c405e8d2f74132e4bb9f50da47b22a92, type: 3}
+  robotPrefab: {fileID: 8364401028449894841, guid: 18760b598930b01458d92983e1656785, type: 3}
   mueblesPrefab:
   - {fileID: 8425552004712928480, guid: a90f04f7e6e614f43bdeecb1e25ae93c, type: 3}
   - {fileID: 7916789952281816514, guid: 745b5ac8c80a4704595951b7e887f4fa, type: 3}

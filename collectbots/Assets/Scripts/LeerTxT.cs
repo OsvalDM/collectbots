@@ -4,6 +4,8 @@ using System.Globalization;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.XR;
+using UnityEngine.Networking;
+
 
 public class LeerTxT : MonoBehaviour
 {
@@ -14,7 +16,9 @@ public class LeerTxT : MonoBehaviour
 
     private int height = 0;
     private int width = 0;
+    private int iteraciones = 0;
     private string[,] matrix;
+    private int[,] data;
 
     [SerializeField] GameObject terrenoPrefab;
     [SerializeField] GameObject papeleraPrefab;
@@ -32,6 +36,7 @@ public class LeerTxT : MonoBehaviour
         generarBasura(basuraPrefab);
 
         //ajustarCamara();
+        simular();
     }
 
     public void obtenerMedidasyMatriz()
@@ -56,7 +61,7 @@ public class LeerTxT : MonoBehaviour
                 }
             }
         }
-        outputText.text = $"Altura: {height}\nAncho: {width}";
+        outputText.text = $"Altura: {height}\nAncho: {width}";        
     }
 
     public void generarTerreno(GameObject terreno)
@@ -146,4 +151,72 @@ public class LeerTxT : MonoBehaviour
 
         camara.GetComponent<Camera>().fieldOfView = fieldOfV;
     }*/
+
+    public void simular()
+    {
+        data = new int[height, width];
+        StartCoroutine(obtIteraciones());
+        //for (int i = 0; i < iteraciones; i++)
+        //{
+        //    StartCoroutine(obtenerApi(i));
+        //      --> mover robots --> verificar basura
+        //}
+        StartCoroutine(obtenerApi(1));
+    }
+
+    IEnumerator obtenerApi(int iteracion)
+    {
+
+        string url = "http://localhost:8585/grid?ite=" + iteracion.ToString();
+        using (UnityWebRequest www = UnityWebRequest.Get(url))
+        {
+            www.downloadHandler = (DownloadHandler)new DownloadHandlerBuffer();
+
+            www.SetRequestHeader("Content-Type", "application/json");
+
+            yield return www.SendWebRequest();
+            if (www.isNetworkError || www.isHttpError)
+            {
+                Debug.Log("Error");
+                Debug.Log(www.error);
+            }
+            else
+            {
+                string jsonResponse = www.downloadHandler.text;
+
+                Debug.Log(jsonResponse);
+
+                
+            }
+        }
+
+    }
+
+    IEnumerator obtIteraciones()
+    {
+
+        string url = "http://localhost:8585/iterations";
+        using (UnityWebRequest www = UnityWebRequest.Get(url))
+        {
+            www.downloadHandler = (DownloadHandler)new DownloadHandlerBuffer();
+
+            www.SetRequestHeader("Content-Type", "application/json");
+
+            yield return www.SendWebRequest();
+            if (www.isNetworkError || www.isHttpError)
+            {
+                Debug.Log("Error");
+                Debug.Log(www.error);
+            }
+            else
+            {
+                string jsonResponse = www.downloadHandler.text;
+
+                Debug.Log("iteraciones: " + jsonResponse);
+
+                iteraciones = int.Parse(jsonResponse);
+            }
+        }
+
+    }
 }
