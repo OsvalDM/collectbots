@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\LeerTxT.cs" />
+    <Compile Include="Assets\Scripts\RobotScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

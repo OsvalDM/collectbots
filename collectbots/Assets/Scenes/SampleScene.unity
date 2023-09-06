@@ -282,7 +282,7 @@ GameObject:
   - component: {fileID: 705507994}
   m_Layer: 0
   m_Name: Directional Light
-  m_TagString: Untagged
+  m_TagString: Finish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -393,10 +393,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc019db1875dfdd41a483d7310b58a46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  content_txt: "13 7\r\n7 0 0 7 3 7 6 \r\n2 X 0 0 0 3 0 \r\n2 0 0 6 0 4 0 \r\n0 X
-    5 0 0 4 8 \r\n2 X 0 0 7 0 0 \r\n0 4 P X 0 7 0 \r\n0 0 3 3 0 0 3 \r\n0 X 8 0 0
-    0 0 \r\n5 0 0 0 0 5 0 \r\n6 0 3 X 0 X 0 \r\n6 0 X 8 0 0 0 \r\n0 7 4 5 0 0 0 \r\n0
-    5 S X 0 0 0 "
+  content_txt: "13 7\r\n0 X 0 0 0 7 0 \r\n0 7 X 0 0 2 0 \r\n0 0 P 0 0 0 0 \r\n0 0
+    0 S 3 0 4 \r\n5 0 0 4 0 8 X \r\n0 5 0 X 3 3 0 \r\n5 0 8 0 0 6 5 \r\nX 0 0 X X
+    0 8 \r\n2 7 6 2 4 6 0 \r\n0 8 0 0 0 0 0 \r\n0 6 0 3 0 0 5 \r\n0 0 0 8 5 5 X \r\n0
+    8 0 X 0 0 4 "
   outputText: {fileID: 324266835}
   terrenoPrefab: {fileID: 3811983264912822627, guid: 1e7f3541d263dc7438b137f0ee51d1cc, type: 3}
   papeleraPrefab: {fileID: 7235991722038223375, guid: 4a17e489d7fa94c4391df059a94485de, type: 3}
@@ -406,13 +406,13 @@ MonoBehaviour:
   - {fileID: 7916789952281816514, guid: 745b5ac8c80a4704595951b7e887f4fa, type: 3}
   - {fileID: 826303955735288356, guid: 425633ee69c7a2848a5b6608e2fb4f86, type: 3}
   - {fileID: 7939399920605019283, guid: 78ea4b6d27716054db490c7c07bd9799, type: 3}
-  - {fileID: 7939399920605019283, guid: 78ea4b6d27716054db490c7c07bd9799, type: 3}
   basuraPrefab:
   - {fileID: 3870333486661443003, guid: d0396ebbf0d738f4ea3bf082dd817873, type: 3}
   - {fileID: 2177424213594504572, guid: 779032e6db5694641a1a1abffa45b788, type: 3}
   - {fileID: 4918873782119673475, guid: f7bff8002434b0542bd76ab6756a142d, type: 3}
   - {fileID: 3007356854590519836, guid: b82e43cdc40c94649af413450e23894b, type: 3}
   - {fileID: 4825956683331397997, guid: c26da026575b3424096d7fa51cbdbc18, type: 3}
+  basuras: []
 --- !u!4 &793385091
 Transform:
   m_ObjectHideFlags: 0
@@ -463,8 +463,8 @@ Camera:
   m_GameObject: {fileID: 963194225}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.11662513, g: 0.14842536, b: 0.1981132, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
